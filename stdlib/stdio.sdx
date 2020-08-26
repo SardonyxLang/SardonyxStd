@@ -1,0 +1,40 @@
+object Stdio {
+    object Stdout {
+        fn write(s) {
+            __rb_call("STDOUT.print", [s])
+        }
+
+        fn writeln(s) {
+            __rb_call("STDOUT.puts", [s])
+        }
+    }
+
+    object Stdin {
+        fn readln() {
+            __rb_call("STDIN.gets", [])
+        }
+    }
+
+    object File(name) {
+
+        fn write(s) {
+            __rb_call("File.write", [name, s])
+        }
+
+        fn writeln(s) {
+            __rb_call("File.puts", [name, s])
+        }
+
+        fn read() {
+            __rb_call("File.read", [name])
+        }
+
+        fn readln() {
+            __rb_call("File.gets", [name])
+        }
+    }
+
+    write = Stdout:write
+    writeln = Stdout:writeln
+    readln = Stdin:readln
+}
