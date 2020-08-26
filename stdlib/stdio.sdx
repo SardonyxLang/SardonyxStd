@@ -16,7 +16,6 @@ object Stdio {
     }
 
     object File(name) {
-
         fn write(s) {
             __rb_call("File.write", [name, s])
         }

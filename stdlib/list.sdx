@@ -1,0 +1,21 @@
+object List {
+    fn map(f, x) {
+        out = []
+        for i in x {
+            out = out + f(i)
+        }
+        out
+    }
+
+    fn filter(f, x) {
+        out = []
+        for i in x {
+            res = f(i)
+            Stdio:writeln(res)
+            if res {
+                out = out + i
+            }
+        }
+        out
+    }
+}
