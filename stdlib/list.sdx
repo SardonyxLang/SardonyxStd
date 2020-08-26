@@ -1,20 +1,37 @@
 object List {
     fn map(f, x) {
         out = []
-        for i in x {
-            out = out + f(i)
+        for x {
+            out = out + f(_)
         }
         out
     }
 
     fn filter(f, x) {
         out = []
-        for i in x {
-            res = f(i)
-            Stdio:writeln(res)
+        for x {
+            res = f(_)
             if res {
-                out = out + i
+                out = out + _
             }
+        }
+        out
+    }
+
+    fn reduce(f, i, x) {
+        out = i
+        for x {
+            out = f(out, _)
+        }
+        out
+    }
+
+    fn range(b, e) {
+        out = []
+        i = b
+        while i < e {
+            out = out + i
+            i = i + 1
         }
         out
     }

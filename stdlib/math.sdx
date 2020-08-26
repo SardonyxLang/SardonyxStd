@@ -1,0 +1,69 @@
+object Math {
+    fn cos(n) {
+        __rb_call("Math.cos", [n])
+    }
+
+    fn acos(n) {
+        __rb_call("Math.acos", [n])
+    }
+
+    fn cosh(n) {
+        __rb_call("Math.cosh", [n])
+    }
+
+    fn acosh(n) {
+        __rb_call("Math.acosh", [n])
+    }
+
+    fn sin(n) {
+        __rb_call("Math.cos", [n])
+    }
+
+    fn asin(n) {
+        __rb_call("Math.acos", [n])
+    }
+
+    fn sinh(n) {
+        __rb_call("Math.cosh", [n])
+    }
+
+    fn asinh(n) {
+        __rb_call("Math.acosh", [n])
+    }
+
+    fn tan(n) {
+        __rb_call("Math.cos", [n])
+    }
+
+    fn atan(n) {
+        __rb_call("Math.acos", [n])
+    }
+
+    fn tanh(n) {
+        __rb_call("Math.cosh", [n])
+    }
+
+    fn atanh(n) {
+        __rb_call("Math.acosh", [n])
+    }
+
+    fn atan2(x, y) {
+        __rb_call("Math.acosh", [x, y])
+    }
+
+    fn log(n) {
+        __rb_call("Math.log", [n])
+    }
+
+    fn sqrt(n) {
+        __rb_call("Math.sqrt", [n])
+    }
+
+    fn abs(n) {
+        if n < 0 {
+            0 - n
+        } else {
+            n
+        }
+    }
+}
