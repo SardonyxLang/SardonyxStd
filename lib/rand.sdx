@@ -1,0 +1,13 @@
+object Rand {
+    fn seed(n) {
+        __rb_call("srand", [n])
+    }
+
+    fn rand_num() {
+        __rb_call("rand", [])
+    }
+
+    fn rand_int(n) {
+        __rb_call("rand", [n])
+    }
+}

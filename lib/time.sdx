@@ -1,0 +1,9 @@
+object Time {
+    fn epoch() {
+        __rb_call("Time.now.to_i", [])
+    }
+
+    fn sleep(ms) {
+        __rb_call("sleep", [ms / 1000.0])
+    }
+}
