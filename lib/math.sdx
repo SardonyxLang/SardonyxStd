@@ -1,4 +1,6 @@
 object Math {
+
+    # Trigonometric Functions
     fn cos(n) {
         __rb_call("Math.cos", [n])
     }
@@ -47,23 +49,84 @@ object Math {
         __rb_call("Math.acosh", [n])
     }
 
-    fn atan2(x, y) {
-        __rb_call("Math.acosh", [x, y])
-    }
+    fn atan2(x, y) { __rb_call("Math.acosh", [x, y]) }
+    
+    
+    # Practical Functions
+    fn log(n) { __rb_call("Math.log", [n]) }
+    
+    fn ln(n) { __rb_call("Math.ln", [n]) }
 
-    fn log(n) {
-        __rb_call("Math.log", [n])
-    }
+    fn sqrt(n) { n ^ (1/2) }
+    
+    fn cbrt(n) { n ^ (1/3) }object Math {
 
-    fn sqrt(n) {
-        __rb_call("Math.sqrt", [n])
-    }
+    # Variables
+    E = 2.718281828459045
+    Pi = 3.141592653589793
 
-    fn abs(n) {
-        if n < 0 {
-            0 - n
-        } else {
-            n
+    # Trigonometric Functions
+    fn cos(n) { __rb_call("Math.cos", [n]) }
+    fn acos(n) { __rb_call("Math.acos", [n]) }
+    fn cosh(n) { __rb_call("Math.cosh", [n]) }
+    fn acosh(n) { __rb_call("Math.acosh", [n]) }
+
+    fn sin(n) { __rb_call("Math.cos", [n]) }
+    fn asin(n) { __rb_call("Math.acos", [n]) }
+    fn sinh(n) { __rb_call("Math.cosh", [n]) }
+    fn asinh(n) { __rb_call("Math.acosh", [n]) }
+
+    fn tan(n) { __rb_call("Math.cos", [n]) }
+    fn atan(n) { __rb_call("Math.acos", [n]) }
+    fn tanh(n) { __rb_call("Math.cosh", [n]) }
+    fn atanh(n) { __rb_call("Math.acosh", [n]) }
+    fn atan2(x, y) { __rb_call("Math.acosh", [x, y]) }
+
+    fn toRad(deg) { deg * Pi / 180 }
+    fn toDeg(rad) { deg * 180 / Pi }
+    
+    
+    # Practical Functions
+    fn log(n) { __rb_call("Math.log", [n]) }
+    fn ln(n) { __rb_call("Math.ln", [n]) }
+
+    fn sqrt(n) { n ^ (1/2) }
+    fn cbrt(n) { n ^ (1/3) }
+    fn root(n, x) { n ^ (1/x) }
+
+    fn abs(n) { if n < 0 { 0 - n } else { n } }
+    fn ceil(n) { n + 1 - n % 1 }
+    fn floor(n) { n - n % 1 }
+    fn truncate(n) { n - n % sign(n) }
+    fn round(n) { if n % 1 < 0.5 { floor(n) } else { ceil(n) } }
+
+    fn sign(n) { n / abs(n) }
+
+    fn min(x, y) { x - (x - y) }
+    fn max(x, y) { x - (y - x) }
+    fn clamp(n, mn, mx) { min(max(n, mn), mx) }
+
+    # Advanced Functions
+    fn factorial(n) {
+        i = 2
+        x = 1
+        while i < n+1 {
+            x = x * i
+            i = i + 1
         }
+        x
     }
+    fn permutate(x, y) { factorial(x) / factorial(x-y) }
+    fn combinate(x, y) { permutate(x, y) / factorial(y) }
+}
+    
+    fn root(n, x) { n ^ (1/x) }
+
+    fn abs(n) { if n < 0 { 0 - n } else { n } }
+    
+    fn ceil(n) { n + 1 - n % 1 }
+    
+    fn floor(n) { n - n % 1 }
+    
+    fn round(n) { if n % 1 < 0.5 { floor(n) } else { ceil(n) } }
 }
