@@ -3,11 +3,12 @@ object Rand {
         __rb_call("srand", [n])
     }
 
-    fn rand_num() {
-        __rb_call("rand", [])
+    fn num(min, max) {
+        __rb_call("rand", []) * (max - min) + min
     }
 
-    fn rand_int(n) {
-        __rb_call("rand", [n])
+    fn int(min, max) {
+        x = num(min, max+1)
+        x - x % 1
     }
 }
