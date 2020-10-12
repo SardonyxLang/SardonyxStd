@@ -6,4 +6,49 @@ object Time {
     fn sleep(ms) {
         __rb_call("sleep", [ms / 1000.0])
     }
+
+    # Microseconds Passed in Current Second
+    fn micro() {
+        __rb_call("Time.new.usec", [])
+    }
+
+    # Milliseconds Passed in Current Second
+    fn ms() {
+        __rb_call("(Time.new.usec/1000).floor", [])
+    }
+
+    # Seconds Passed in Current Minute
+    fn second() {
+        __rb_call("Time.new.sec", [])
+    }
+
+    # Minutes Passed in Current Hour (UTC)
+    fn minute() {
+        __rb_call("Time.new.min", [])
+    }
+
+    # Hours Passed in Current Day (UTC)
+    fn hour() {
+        __rb_call("Time.new.hour", [])
+    }
+
+    # Days Passed in Current Month (UTC)
+    fn date() {
+        __rb_call("Time.new.day", []) - 1
+    }
+
+    # Current Day of Week (UTC)
+    fn day() {
+        __rb_call("Time.new.wday", [])
+    }
+
+    # Months Passed in Current Year (UTC)
+    fn month() {
+        __rb_call("Time.new.month", []) - 1
+    }
+
+    # Year (UTC)
+    fn year() {
+        __rb_call("Time.new.year", [])
+    }
 }
